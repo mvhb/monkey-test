@@ -1,16 +1,9 @@
 #!/bin/sh
 
-#SETUP: Usar conta de teste (modo teste ativado) / Remover endereços que nao seja ramal bujari / Ativar segurança de compra
-#chmod / install ffmpeg / adb 
-
 echo 'Welcome to Monkey Test program'
 
-echo 'Which package do you wanna test? Default value is: br.com.brainweb.ifood.qa'
-default_package_name="br.com.brainweb.ifood.qa"
+echo 'Which package do you wanna test?'
 read package_name
-if [ "$package_name" = "" ]; then
-    package_name=$default_package_name
-fi
 
 echo 'How many touches do you want for this test? Default value is 5000'
 default_touches=5000
@@ -55,8 +48,3 @@ then
 else
     echo 'No ANR on ifood'
 fi
-
-
-
-# limitar usuario a fazer pedidos - gps/usuario de teste/emulador/compra por biometria
-# GUI --- shellmarks
