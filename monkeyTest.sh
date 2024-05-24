@@ -24,10 +24,6 @@ today=`date '+%Y_%m_%d__%H_%M_%S'`;
 mkdir monkey_test_$today
 cd monkey_test_$today
 
-# Removing LOCATION permission 
-adb shell pm revoke $package_name android.permission.ACCESS_COARSE_LOCATION
-adb shell pm revoke $package_name android.permission.ACCESS_FINE_LOCATION
-
 # Running the monkey test and screenrecording and generate log at the same time
 adb shell "while true; do screenrecord --output-format=h264 -; done" | ffmpeg -i - monkey_test_$today.mp4 & adb logcat &> logcat_$today.txt & adb shell monkey -p $package_name --throttle $throttle -v --monitor-native-crashes $touches &> monkey_test_$today.txt 
 sleep 2 
