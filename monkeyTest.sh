@@ -37,10 +37,3 @@ then
 else
     echo 'No crashes'
 fi
-
-if grep "ANR in br.com.brainweb.ifood" logcat_$today.txt
-then 
-    echo 'ANR on ifood - see txt file generated'
-else
-    echo 'No ANR on ifood'
-fi
